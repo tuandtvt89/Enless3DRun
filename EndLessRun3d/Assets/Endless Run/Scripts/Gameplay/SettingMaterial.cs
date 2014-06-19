@@ -14,7 +14,7 @@ public class SettingMaterial : MonoBehaviour {
 
 	void Update () {
 		for(int i = 0; i < materials.Length; i++){
-			materials[i].shader = Shader.Find("Custom/Curved");;
+			materials[i].shader = Shader.Find("Diffuse");;
 			materials[i].SetVector("_QOffset", offset);
 			materials[i].SetFloat("_Brightness", brightness);
 			materials[i].SetFloat("_Dist", distance);
