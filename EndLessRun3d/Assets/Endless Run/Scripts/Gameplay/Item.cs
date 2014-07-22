@@ -97,6 +97,9 @@ public class Item : MonoBehaviour {
 	}
 
 	IEnumerator MovingItem(){
+		// Edited by Tun: Delay time for Bus_Moving arriving on time.
+		//yield return new WaitForSeconds(20 / GameAttribute.gameAttribute.speed);
+
 		while (itemActive) {
 			if(!GameAttribute.gameAttribute.pause)
 			transform.Translate(Vector3.back * speedMove * Time.deltaTime);

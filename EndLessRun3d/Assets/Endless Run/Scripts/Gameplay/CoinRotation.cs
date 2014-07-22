@@ -15,7 +15,7 @@ public class CoinRotation : MonoBehaviour {
 				col.GetComponent<Item>().itemRotate.PlayCoin();
 			}
 
-			if(col.GetComponent<Item>().typeItem == Item.TypeItem.Moving_Obstacle){
+			if(col.GetComponent<Item>().speedMove != 0){
 				col.GetComponent<Item>().UseMovingItem();
 			}
 		}

@@ -138,6 +138,9 @@ public class PatternSystem : MonoBehaviour {
 	private int randomPattern;
 	private int randomItem;
 	private Vector3 posFloorLast;
+
+	// Edited by Tun
+	private int tempRandomItem;
 	
 	//Defalut
 	private Vector3 posStart = new Vector3(-100,-100,-100);
@@ -539,7 +542,16 @@ public class PatternSystem : MonoBehaviour {
 		queneFloor.RemoveRange(0,1);
 		int i = 0;
 		randomPattern = Random.Range(0, patternBuilding.Count);
-		randomItem = Random.Range(0, patternItem.Count);
+
+		// Edited by Tun: Add temp variable value for @randomItem
+		do
+		{
+			randomItem = Random.Range(0, patternItem.Count);
+		}
+		while(randomItem == tempRandomItem);
+		tempRandomItem = randomItem;
+		//randomItem = 13;
+
 		while(i < building_Script.Count){
 			int j = 0;
 			while(j < patternBuilding[randomPattern].stateBuilding_Left.Length){
@@ -618,7 +630,16 @@ public class PatternSystem : MonoBehaviour {
 	void AddBuildingToFloor(QueueFloor floor){
 		int i = 0;
 		randomPattern = Random.Range(0, patternBuilding.Count);
-		randomItem = Random.Range(0, patternItem.Count);
+
+		// Edited by Tun: Add temp variable value for @randomItem
+		do
+		{
+			randomItem = Random.Range(0, patternItem.Count);
+		}
+		while(randomItem == tempRandomItem);
+		tempRandomItem = randomItem;
+		//randomItem = 13;
+
 		while(i < building_Script.Count){
 			int j = 0;
 			while(j < patternBuilding[randomPattern].stateBuilding_Left.Length){
